@@ -7,13 +7,18 @@ int main() {
     int size=15;//size of array
     int numzeros=0;
     int numones=0;
+    //Loop through each element in the array
     for(int i=0;i<size;i++){
+        //If the element is 0, increment the numzeros counter
         if(arr[i]==0)
         numzeros++;
+        //If the element is 1, increment the numones counter
         else
         numones++;
     }
+    //Print the number of zeros
     cout<<"Number Of Zeros = "<<numzeros<<endl;
+    //Print the number of ones
     cout<<"Number Of Ones = "<<numones<<endl;
     return 0;
 }

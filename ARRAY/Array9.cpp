@@ -1,38 +1,21 @@
-<<<<<<<<<<<<<<<<<<<<<<<< CodeGeeX Inline Diff>>>>>>>>>>>>>>>>>>>>>>>>
-+#include <iostream>
-+#include <vector>
-+#include <unordered_map>
-+
-+bool findPairSum(std::vector<int> arr1, std::vector<int> arr2, int target) {
-+    std::unordered_map<int, int> num_count;
-+
-+    // Count the occurrences of each number in arr1
-+    for (int num : arr1) {
-+        num_count[num]++;
-+    }
-+
-+    // Iterate through arr2 and check if the complement exists in arr1
-+    for (int num : arr2) {
-+        if (num_count.find(target - num) != num_count.end()) {
-+            return true;
-+        }
-+    }
-+
-+    return false;
-+}
-+
-+int main() {
-+    std::vector<int> arr1 = {1, 3, 5, 7, 9};
-+    std::vector<int> arr2 = {2, 4, 6, 8, 10};
-+    int target = 15;
-+
-+    if (findPairSum(arr1, arr2, target)) {
-+        std::cout << "Pair sum found!" << std::endl;
-+    } else {
-+        std::cout << "Pair sum not found!" << std::endl;
-+    }
-+
-+    return 0;
-+}
-
-<<<<<<<<<<<<<<<<<<<<<<<< CodeGeeX Inline Diff>>>>>>>>>>>>>>>>>>>>>>>>
+#include<iostream>
+using namespace std;
+bool findTriplet(int arr[],int size,int sum){
+    for(int i=0;i<size-2;i++){
+        for(int j=i+1;j<size-1;j++){
+            for(int k=j+1;k<size;k++){
+                if(arr[i]+arr[j]+arr[k]==sum){
+                    cout<<"Triplets are: "<<arr[i]<<","<<arr[j]<<","<<arr[k];
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+int main(){
+    int arr[]={12,4,5,9,2,8};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    int sum=26;
+    int triplet=findTriplet(arr,size,sum);
+}
